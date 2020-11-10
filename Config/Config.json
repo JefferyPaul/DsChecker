@@ -1,0 +1,73 @@
+{
+	"说明": {
+		"程序": [
+			"检查（最活跃合约的）Data文件中的数据时间，是否与TradingSession中规定的一致",
+			[
+				"1 数据目录。目录结构可参考： Platinum.Ds\\BarData\\60\\Futures",
+				"2 MostActiveTickers.csv,只检查最活跃合约",
+				"3 TradingSession.csv,规定‘正确’的数据时间，报错也是基于TradingSession",
+				"4 today, True or False",
+				"5 start_date end_date"
+			]
+		],
+		"设置": {
+			"today": [
+				"false 或 true"
+			],
+			"start_date": [
+				"20200602",
+				"仅当today==false时生效"
+			],
+			"end_date": [
+				"20200602",
+				"仅当today==false时生效"
+			]
+		}
+	},
+	"ds_root": "D:\\Platinum\\Platinum.Ds\\BarData\\60\\Futures",
+	"path_mat": "D:\\Platinum\\Platinum.DS\\Data\\MostActiveTickers.csv",
+	"path_trading_session": ".\\Config\\Data\\TradingSession.csv",
+	"start_date": "20200601",
+	"end_date": "20200602",
+	"today": true,
+	"check_exchange": [
+		"SHFE",
+		"DCE",
+		"CZCE",
+		"INE",
+		"CFFEX"
+	],
+	"skip_product": [
+		"JR.CZCE",
+		"fb.DCE",
+		"bb.DCE",
+		"sp.SHFE",
+		"wr.SHFE",
+		"WH.CZCE",
+		"SF.CZCE",
+		"RS.CZCE",
+		"fb.DCE",
+		"CY.CZCE",
+		"TS.CFFEX",
+		"LR.CZCE",
+		"PM.CZCE",
+		"RI.CZCE",
+		"MMIC.CFFEX",
+		"MMIF.CFFEX",
+		"MMIH.CFFEX"
+	],
+	"is_warning_board": false,
+	"is_use_redis": true,
+	"redis": {
+		"redis_server": {
+			"host": "192.168.1.33",
+			"port": "6379",
+			"db": "1",
+			"channel": "MyTest"
+		},
+		"pubsub": {
+			"channel": "MyTest",
+			"my_address": "192.168.1.31"
+		}
+	}
+}
